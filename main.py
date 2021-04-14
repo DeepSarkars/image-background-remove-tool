@@ -145,7 +145,11 @@ def cli():
     if model_name == "test":
         print(input_path, output_path, model_name, preprocessing_method_name, postprocessing_method_name)
     else:
-        process(input_path, output_path, model_name, preprocessing_method_name, postprocessing_method_name)
+        dir_list=os.listdir(input_path)
+        for dir_name in dir_list:
+          new_input=os.path.join(input_path,dir_name+'/')
+          new_output=os.path.join(output_path,dir_name+'/')
+          process(new_input, new_output, model_name, preprocessing_method_name, postprocessing_method_name)
 
 
 if __name__ == "__main__":
