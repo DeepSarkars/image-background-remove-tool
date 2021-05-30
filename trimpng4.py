@@ -63,9 +63,9 @@ for folderName in dir_list:
         destFile=new_output+filePath.split('/')[-1]
         #resize the image
         (w,h) = image.size
-        wf,hf = w//336,h//336
-        f = hf if wf < hf else wf
-        resize_im = image.resize((w//f,h//f))
+        #wf,hf = w//336,h//336
+        #f = hf if wf < hf else wf
+        resize_im = image.resize((w,h))
         print ( "New Size:", resize_im.size)
         #for png
         resize_im.save(destFile)
